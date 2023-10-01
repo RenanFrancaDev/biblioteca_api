@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-const conectDB = require('../middlewares/conectDB');
+const connectDatabase = require('../middlewares/connectDB');
 const SchemaBook = require('../models/book');
 const errorHandling = require('../functions/errorHandling');
 
 
-router.post('/create', conectDB, async function(req, res, next) {
+router.post('/create', connectDatabase, async function(req, res, next) {
   try{
       // #swagger.tags = ['Book']
       let {title,synopsis, pages, isbn, publisher, img} = req.body;
@@ -21,7 +21,7 @@ router.post('/create', conectDB, async function(req, res, next) {
   }
 });
 
-router.put('/edit/:id', conectDB, async function(req, res, next) {
+router.put('/edit/:id', connectDatabase, async function(req, res, next) {
   try{
       // #swagger.tags = ['Book']
       let idBook = req.params.id;
@@ -47,7 +47,7 @@ router.put('/edit/:id', conectDB, async function(req, res, next) {
   }
 });
 
-router.get('/get-books', conectDB, async function(req, res, next) {
+router.get('/get-books', connectDatabase, async function(req, res, next) {
   try{
       // #swagger.tags = ['Book']
       const resDB = await SchemaBook.find();
@@ -62,7 +62,7 @@ router.get('/get-books', conectDB, async function(req, res, next) {
   }
 });
 
-router.get('/get-book/:id', conectDB, async function(req, res, next) {
+router.get('/get-book/:id', connectDatabase, async function(req, res, next) {
   try{
       // #swagger.tags = ['Book']
       let idBook = req.params.id;
@@ -84,7 +84,7 @@ router.get('/get-book/:id', conectDB, async function(req, res, next) {
   }
 });
 
-router.delete('/delete/:id', conectDB, async function(req, res, next) {
+router.delete('/delete/:id', connectDatabase, async function(req, res, next) {
   try{
       // #swagger.tags = ['Book']
       let idBook = req.params.id;

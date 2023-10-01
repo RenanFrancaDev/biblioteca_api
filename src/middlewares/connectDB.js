@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const errorHandling = require('../functions/errorHandling');
 
-async function conectDB(req = null, res = null, next = null) {
+async function connectDatabase(req = null, res = null, next = null) {
   try {
     await mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
     console.log('Connecting database!');
@@ -14,4 +14,4 @@ async function conectDB(req = null, res = null, next = null) {
   }
 }
 
-module.exports = conectDB;
+module.exports = connectDatabase;
