@@ -84,7 +84,7 @@ router.get('/get-book/:id', conectDB, async function(req, res, next) {
   }
 });
 
-router.delete('/deletar/:id', conectDB, async function(req, res, next) {
+router.delete('/delete/:id', conectDB, async function(req, res, next) {
   try{
       // #swagger.tags = ['Book']
       let idBook = req.params.id;
