@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const ErrorHandling = require('../functions/ErrorHandling');
+const errorHandling = require('../functions/errorHandling');
 
-async function conectarBancoDados(req = null, res = null, next = null) {
+async function conectDB(req = null, res = null, next = null) {
   try {
     await mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
     console.log('Connecting database!');
@@ -9,10 +9,9 @@ async function conectarBancoDados(req = null, res = null, next = null) {
     return mongoose;
   } catch (error) {
     console.error(error);
-    console.log(MONGODB_URI);
-    ErrorHandling(res, 'Error: Error connecting to database')
+    errorHandling(res, 'Error: Error connecting to database')
     return error;
   }
 }
 
-module.exports = conectarBancoDados;
+module.exports = conectDB;

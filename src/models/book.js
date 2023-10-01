@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema(
     {
-        titulo: {
+        title: {
             type: String,
             required: 'It is required',
         },
@@ -10,7 +10,7 @@ const schema = new mongoose.Schema(
             type: String,
             default: null,
         },
-        paginas: {
+        pages: {
             type: Number,
             required: 'It is required',
         },
@@ -18,7 +18,7 @@ const schema = new mongoose.Schema(
             type: String,
             required: 'It is required',
         },
-        editora: {
+        publisher: {
             type: String,
             required: 'It is required',
         },
