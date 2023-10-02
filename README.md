@@ -4,11 +4,11 @@ Online library web application to register books
 
 # LINK
 
-Construction...
+https://biblioteca-api-rho.vercel.app/doc/
 
 ## Status
 
-The project is in planning, configuring the environment.
+The project is ready to localhost, production server under maintenance
 
 
 ## Install
