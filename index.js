@@ -10,6 +10,7 @@ const routes = require('./src/routes');
 const app = express();
 require('dotenv').config();
 
+// Express JS
 app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
@@ -18,16 +19,22 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-if(process.env.NODE_ENV !== 'test'){
-    const swaggerFile = require('./swagger/swagger_output.json');
-    app.get('/', (req, res) => { /* #swagger.ignore = true */ res.redirect('/doc'); });
-    app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile, swaggerOptions));
-}
-
+// Doc Swagger
+if (process.env.NODE_ENV !== "test") {
+    const swaggerFile = require("./swagger/swagger_output.json");
+    app.get("/", (req, res) => {
+      /* #swagger.ignore = true */ res.redirect("/doc");
+    });
+    app.use(
+      "/doc",
+      /*authDocProducao*/ swaggerUi.serve,
+      swaggerUi.setup(swaggerFile, swaggerOptions)
+    );
+  }
+  
 
 
 routes(app);
-
 
 
 if (process.env.NODE_ENV !== 'test') {
