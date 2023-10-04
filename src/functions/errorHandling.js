@@ -7,7 +7,7 @@ function errorHandling(res, err) {
     return res.status(400).json({
       status: "Error",
       statusMensagem: S(String(err).replace("ValidationError: ", "")).replaceAll(':', '').s,
-      resposta: String(err)
+      response: String(err)
     });
   }
 
@@ -16,7 +16,7 @@ function errorHandling(res, err) {
     return res.status(400).json({
       status: "Error",
       statusMensagem: String(err).replace("Error: ", ""),
-      resposta: String(err)
+      response: String(err)
     });
   }
 
@@ -25,7 +25,7 @@ function errorHandling(res, err) {
   return res.status(500).json({
     status: "Error",
     statusMensagem: "There was an unexpected problem, please try again later.",
-    resposta: String(err)
+    response: String(err)
   });
 }
 

@@ -1,5 +1,6 @@
 const mongooseToSwagger = require("mongoose-to-swagger");
 const SchmemaBook = require("../src/models/book.js");
+const SchemaUser = require("../src/models/user.js")
 const swaggerAutogen = require("swagger-autogen")({
   openapi: "3.0.0",
   language: "pt-BR",
@@ -30,6 +31,7 @@ let doc = {
   components: {
     schemas: {
       Book: mongooseToSwagger(SchmemaBook),
+      User: mongooseToSwagger(SchemaUser),
     },
   },
 };

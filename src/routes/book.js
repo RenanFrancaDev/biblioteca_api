@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const connectDatabase = require('../middlewares/connectDB');
 const SchemaBook = require('../models/book');
 const errorHandling = require('../functions/errorHandling');
@@ -14,7 +14,7 @@ router.post('/create', connectDatabase, async function(req, res, next) {
       res.status(200).json({
           status: "OK",
           statusMensagem: "Book created",
-          resposta: resDB
+          response: resDB
       });
   }catch(error){
       return errorHandling(res, error);
@@ -39,7 +39,7 @@ router.put('/edit/:id', connectDatabase, async function(req, res, next) {
           res.status(200).json({
               status: "OK",
               statusMensagem: "Book updated successfully.",
-              resposta: taskDate
+              response: taskDate
           });
       }
   }catch(error){
@@ -55,7 +55,7 @@ router.get('/get-books', connectDatabase, async function(req, res, next) {
       res.status(200).json({
           status: "OK",
           statusMensagem: "Books listed in response successfully.",
-          resposta: resDB
+          response: resDB
       });
   }catch(error){
       return errorHandling(res, error);
@@ -77,7 +77,7 @@ router.get('/get-book/:id', connectDatabase, async function(req, res, next) {
       res.status(200).json({
           status: "OK",
           statusMensagem: "Books listed in response successfully.",
-          resposta: resDB
+          response: resDB
       });
   }catch(error){
       return errorHandling(res, error);
@@ -99,7 +99,7 @@ router.delete('/delete/:id', connectDatabase, async function(req, res, next) {
       res.status(200).json({
           status: "OK",
           statusMensagem: "Book successfully deleted",
-          resposta: resDB
+          response: resDB
       });
   }catch(error){
       return errorHandling(res, error);
