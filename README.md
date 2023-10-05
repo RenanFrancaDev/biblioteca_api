@@ -1,14 +1,21 @@
 # Fire Development - Library Online - BACK-END - API
 
-Online library web application to register books
+Back End project with CRUD (Create, Read, Update, Delete) and login routes.
+
+In this project you can register and edit books in the library
 
 # LINK
 
+Swagger documentation:
 https://biblioteca-api-rho.vercel.app/doc/
 
 ## Status
 
-The project is ready to localhost, production server under maintenance
+The project is in production.
+
+https://biblioteca-wine.vercel.app/
+
+![App Screenshot](https://github.com/RenanFrancaDev/Online_Library/blob/main/src/assets/Library.png)
 
 
 ## Install
